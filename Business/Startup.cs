@@ -90,6 +90,20 @@ namespace Business
         public void ConfigureDevelopmentServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<ICustomerCustomerDemoRepository, CustomerCustomerDemoRepository>();
+            services.AddTransient<ICustomerDemographicRepository, CustomerDemographicRepository>();
+            services.AddTransient<IEmployeeTerritoryRepository, EmployeeTerritoryRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IRegionRepository, RegionRepository>();
+            services.AddTransient<IShipperRepository, ShipperRepository>();
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
+            services.AddTransient<ITerritoryRepository, TerritoryRepository>();
+            
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
@@ -113,6 +127,20 @@ namespace Business
         public void ConfigureStagingServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<ICustomerCustomerDemoRepository, CustomerCustomerDemoRepository>();
+            services.AddTransient<ICustomerDemographicRepository, CustomerDemographicRepository>();
+            services.AddTransient<IEmployeeTerritoryRepository, EmployeeTerritoryRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IRegionRepository, RegionRepository>();
+            services.AddTransient<IShipperRepository, ShipperRepository>();
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
+            services.AddTransient<ITerritoryRepository, TerritoryRepository>();
+            
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
@@ -135,6 +163,20 @@ namespace Business
         public void ConfigureProductionServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<ICustomerCustomerDemoRepository, CustomerCustomerDemoRepository>();
+            services.AddTransient<ICustomerDemographicRepository, CustomerDemographicRepository>();
+            services.AddTransient<IEmployeeTerritoryRepository, EmployeeTerritoryRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IRegionRepository, RegionRepository>();
+            services.AddTransient<IShipperRepository, ShipperRepository>();
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
+            services.AddTransient<ITerritoryRepository, TerritoryRepository>();
+           
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();

@@ -1,4 +1,5 @@
 using Core.Entities.Concrete;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
@@ -45,12 +46,30 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<MobileLogin> MobileLogins { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Translate> Translates { get; set; }
+        public DbSet<Territory> Territories { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Shipper> Shippers { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeTerritory> EmployeeTerritories { get; set; }
+        public DbSet<CustomerDemographic> CustomerDemographics { get; set; }
+        public DbSet<CustomerCustomerDemo> CustomerCustomerDemoes { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
 
         protected IConfiguration Configuration { get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.Entity<CustomerCustomerDemo>().HasNoKey();
+            modelBuilder.Entity<CustomerDemographic>().HasNoKey();
+            modelBuilder.Entity<EmployeeTerritory>().HasNoKey();
+            modelBuilder.Entity<OrderDetail>().HasNoKey();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

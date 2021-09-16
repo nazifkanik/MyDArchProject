@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    
+
     public class Supplier : IEntity
     {
         public int SupplierId { get; set; }
@@ -20,6 +20,5 @@ namespace Entities.Concrete
         public string Phone { get; set; }
         public string Fax { get; set; }
         public string HomePage { get; set; }
-
     }
 }

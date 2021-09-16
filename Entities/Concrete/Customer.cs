@@ -5,7 +5,6 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-
     public class Customer : IEntity
     {
         public string CustomerId { get; set; }
@@ -19,17 +18,5 @@ namespace Entities.Concrete
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-    }
-    
-    public class CustomerDemographic : IEntity
-    {
-        public string CustomerTypeId { get; set; }
-        public string CustomerDesc { get; set; }
-    }
-    
-    public class CustomerCustomerDemo : IEntity
-    {
-        public string CustomerId { get; set; }
-        public string CustomerTypeId { get; set; }
     }
 }

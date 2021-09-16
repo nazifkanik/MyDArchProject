@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities.Concrete
 {
-    
+
     public class Order : IEntity
     {
         public int OrderId { get; set; }
@@ -22,6 +22,5 @@ namespace Entities.Concrete
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
-
     }
 }
