@@ -1,12 +1,13 @@
-﻿
-using Business.Handlers.Products.Commands;
+﻿using Business.Handlers.Products.Commands;
 using Business.Handlers.Products.Queries;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Entities.Concrete;
+using Entities.Dtos;
 using System.Collections.Generic;
+using Business;
 
 namespace WebAPI.Controllers
 {
@@ -17,12 +18,12 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductsController : BaseApiController
     {
-        ///<summary>
-        ///List Products
-        ///</summary>
-        ///<remarks>Products</remarks>
-        ///<return>List Products</return>
-        ///<response code="200"></response>
+        /// <summary>
+        /// List Products.
+        /// </summary>
+        /// <remarks>Products.</remarks>
+        /// <return>List of Products.</return>
+        /// <response code="200"></response>
         [Produces("application/json", "text/plain")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Product>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
@@ -111,6 +112,28 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Message);
             }
+            return BadRequest(result.Message);
+        }
+
+
+        /// <summary>
+        /// List Product Details.
+        /// </summary>
+        /// <remarks>Products.</remarks>
+        /// <returns>List of Product Details.</returns>
+        /// <response code="200"></response>
+        [Produces("application/json", "text/plain")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProductDetailDto>))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [HttpGet("getdetails")]
+        public async Task<IActionResult> GetProductsDetail()
+        {
+            var result = await Mediator.Send(new GetProductDetailsQuery());
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
             return BadRequest(result.Message);
         }
     }
