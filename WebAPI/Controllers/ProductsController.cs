@@ -1,13 +1,11 @@
 ﻿using Business.Handlers.Products.Commands;
 using Business.Handlers.Products.Queries;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Entities.Concrete;
 using Entities.Dtos;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using Business;
+using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
@@ -35,6 +33,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
+
             return BadRequest(result.Message);
         }
 
@@ -55,6 +54,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Data);
             }
+
             return BadRequest(result.Message);
         }
 
@@ -74,6 +74,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Message);
             }
+
             return BadRequest(result.Message);
         }
 
@@ -93,6 +94,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Message);
             }
+
             return BadRequest(result.Message);
         }
 
@@ -112,9 +114,9 @@ namespace WebAPI.Controllers
             {
                 return Ok(result.Message);
             }
+
             return BadRequest(result.Message);
         }
-
 
         /// <summary>
         /// List Product Details.
